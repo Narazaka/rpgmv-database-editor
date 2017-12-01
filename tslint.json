@@ -1,0 +1,35 @@
+{
+    "extends": [
+        "tslint:all"
+    ],
+    "rules": {
+        "member-access": false,
+        "curly": false,
+        "only-arrow-functions": false,
+        "member-ordering": false,
+        "object-literal-sort-keys": false,
+        "variable-name": false,
+        "interface-name": [
+            false
+        ],
+        "typedef": false,
+        "no-unsafe-any": false,
+        "no-any": false,
+        "strict-boolean-expressions": false,
+        "no-void-expression": [
+            true,
+            "ignore-arrow-function-shorthand"
+        ],
+        "comment-format": [
+            true,
+            "check-space"
+        ],
+        "completed-docs": false,
+        "no-inferred-empty-object-type": false,
+        "triple-equals": [
+            true,
+            "allow-null-check"
+        ],
+        "no-implicit-dependencies": false
+    }
+}
