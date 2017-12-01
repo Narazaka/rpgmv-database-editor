@@ -3,8 +3,8 @@ import { IDataEffect } from "../../mv/IDataEffect";
 import { IDataSkill } from "../../mv/IDataSkill";
 
 export class Skill implements IDataSkill {
-    @observable id?: number;
-    @observable oldId?: number;
+    @observable id: number;
+    @observable oldId: number;
     @observable animationId?: number;
     @observable damage?: {
         critical?: boolean;
@@ -38,6 +38,6 @@ export class Skill implements IDataSkill {
         for (const name of Object.keys(skill) as Array<keyof IDataSkill>) {
             this[name] = skill[name];
         }
-        this.oldId = skill.id;
+        this.oldId = skill.id as number;
     }
 }
