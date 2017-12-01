@@ -1,14 +1,10 @@
 import { observer } from "mobx-react";
 import * as React from "react";
-import { SingleSkill } from "./SingleSkill";
+import { SingleSkills } from "./SingleSkills";
 import { Project } from "./state/Project";
 
-export const SkillEditor = observer((props: {project: Project}) =>
+export const SkillEditor = observer(({project}: {project: Project}) =>
     <div>
-        <ul>
-            {
-                props.project.skills.all().map((skill) => <SingleSkill skill={skill} />)
-            }
-        </ul>
+        <SingleSkills skills={project.skills} />
     </div>,
 );
