@@ -7,7 +7,7 @@ import { Skills } from "./state/Skills";
 const dropTargetDecorator = DropTarget(
     "skill",
     {
-        drop(hoverProps: SingleSkillProps, monitor: any) {
+        drop(hoverProps: SkillListItemProps, monitor: any) {
             const dragProps: any = monitor.getItem();
             hoverProps.skills.exchange(hoverProps.skill.id, dragProps.skill.id);
         },
@@ -17,12 +17,12 @@ const dropTargetDecorator = DropTarget(
 const dragSourceDecorator = DragSource(
     "skill",
     {
-        beginDrag(props: SingleSkillProps) { return props; },
+        beginDrag(props: SkillListItemProps) { return props; },
     },
     (connect) => ({connectDragSource: connect.dragSource()}),
 );
 
-export interface SingleSkillProps {
+export interface SkillListItemProps {
     skills: Skills;
     skill: Skill;
 }
@@ -32,7 +32,7 @@ interface DnDConnectedProps {
     connectDragSource: ConnectDragSource;
 }
 
-export const SingleSkill = dropTargetDecorator(dragSourceDecorator(observer((props: SingleSkillProps) =>
+export const SkillListItem = dropTargetDecorator(dragSourceDecorator(observer((props: SkillListItemProps) =>
     (props as any as DnDConnectedProps).connectDragSource((props as any as DnDConnectedProps).connectDropTarget(
         <li>
             {props.skill.id} {props.skill.name}
