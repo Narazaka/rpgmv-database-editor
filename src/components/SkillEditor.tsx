@@ -1,20 +1,14 @@
+import { observer } from "mobx-react";
 import * as React from "react";
+import { SingleSkill } from "./SingleSkill";
+import { Project } from "./state/Project";
 
-export interface SkillEditorProps {
-    projectPath: string;
-}
-
-export interface SkillEditorState {
-
-}
-
-export class SkillEditor extends React.Component<SkillEditorProps, SkillEditorState> {
-    constructor(props: SkillEditorProps) {
-        super(props);
-        this.state = {};
-    }
-
-    render() {
-        return <p />;
-    }
-}
+export const SkillEditor = observer((props: {project: Project}) =>
+    <div>
+        <ul>
+            {
+                props.project.skills.all().map((skill) => <SingleSkill skill={skill} />)
+            }
+        </ul>
+    </div>,
+);
