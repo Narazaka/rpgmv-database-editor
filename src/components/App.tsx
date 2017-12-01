@@ -16,11 +16,21 @@ export class App extends React.Component<{}, AppState> {
     }
 
     render() {
-        return <div>
-            <button onClick={this.setProject}>プロジェクトを指定する</button>
-            <p>{this.state.project ? `現在のプロジェクト: [${this.state.project.gameTitle}] ${this.state.project.path}` : ""}</p>
-            {this.state.project ? <SkillEditor project={this.state.project} /> : ""}
-        </div>;
+        return (
+            <div className="App">
+                <div className="ProjectControl">
+                    <button onClick={this.setProject}>プロジェクトを指定する</button>
+                    <p>
+                        {
+                            this.state.project ?
+                            `現在のプロジェクト: [${this.state.project.gameTitle}] ${this.state.project.path}` :
+                            ""
+                        }
+                    </p>
+                </div>
+                {this.state.project ? <SkillEditor project={this.state.project} /> : ""}
+            </div>
+        );
     }
 
     private setProject = () => {

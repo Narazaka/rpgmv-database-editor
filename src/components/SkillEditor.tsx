@@ -4,7 +4,7 @@ import { SkillList } from "./SkillList";
 import { Project } from "./state/Project";
 
 export const SkillEditor = observer(({project}: {project: Project}) =>
-    <div>
+    <div className="SkillEditor">
         <SkillList skills={project.skills} />
     </div>,
 );

@@ -5,6 +5,6 @@ import { App } from "./components/App";
 window.addEventListener("DOMContentLoaded", () =>
     render(
         <App />,
-        document.getElementById("container"),
+        document.getElementsByTagName("body")[0],
     ),
 );

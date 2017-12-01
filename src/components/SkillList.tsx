@@ -6,11 +6,16 @@ import { SkillListItem } from "./SkillListItem";
 import { Skills } from "./state/Skills";
 
 export const SkillList = DragDropContext(ReactDnDHTML5Backend)(observer(({skills}: {skills: Skills}) =>
-    <ul>
-        {
-            skills.all().map((skill) =>
-                <SkillListItem key={skill.id} skills={skills} skill={skill} />,
-            )
-        }
-    </ul>,
+    <div className="SkillList">
+        <div className="title">
+            <h1>スキル</h1>
+        </div>
+        <ul>
+            {
+                skills.all().map((skill) =>
+                    <SkillListItem key={skill.id} skills={skills} skill={skill} />,
+                )
+            }
+        </ul>
+    </div>,
 ));

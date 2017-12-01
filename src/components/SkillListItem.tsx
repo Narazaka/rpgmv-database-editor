@@ -32,10 +32,12 @@ interface DnDConnectedProps {
     connectDragSource: ConnectDragSource;
 }
 
+const zeropad = (id: number) => `0000${id}`.slice(-4);
+
 export const SkillListItem = dropTargetDecorator(dragSourceDecorator(observer((props: SkillListItemProps) =>
     (props as any as DnDConnectedProps).connectDragSource((props as any as DnDConnectedProps).connectDropTarget(
-        <li>
-            {props.skill.id} {props.skill.name}
+        <li className="SkillListItem">
+            {zeropad(props.skill.id)} {props.skill.name}
         </li>,
     )),
 )));
