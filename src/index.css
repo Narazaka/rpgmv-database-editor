@@ -107,3 +107,12 @@ html, body {
     color: #fff;
     background: #0274E6;
 }
+
+.ItemContent {
+    flex-grow: 1;
+    margin-left: 0.5em;
+    border: 2px solid #8E949E;
+    border-radius: 10px;
+    padding: 0.5em;
+    display: flex;
+}

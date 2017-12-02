@@ -8,7 +8,7 @@ import { CollectionBase } from "./state/CollectionBase";
 export interface ItemListProps {
     title: string;
     items: CollectionBase<any>;
-    selectedId?: number;
+    selectedId: number;
     onClick(selectedId: number): void;
 }
 

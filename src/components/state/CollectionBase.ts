@@ -8,7 +8,7 @@ export class CollectionBase<Item extends ItemBase<any>> {
         this.items = items;
     }
 
-    item = (id: number) => this.items.find((item) => item.id === id);
+    item = (id: number) => this.items.find((item) => item.id === id) as Item;
 
     all = () => this.items;
 
