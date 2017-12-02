@@ -20,7 +20,7 @@ export class SkillEditor extends React.Component<{project: Project}, {selectedId
                 items={skills}
                 selectedId={this.state.selectedId}
                 onClick={this.onItemSelect} />
-            <SkillContent skill={skills.item(this.state.selectedId)} />
+            <SkillContent project={this.props.project} skill={skills.item(this.state.selectedId)} />
         </div>;
     }
 
