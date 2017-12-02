@@ -1,7 +1,7 @@
 import { IDataEffect } from "./IDataEffect";
 
 export interface IDataSkill {
-    id?: number;
+    id: number;
     animationId?: number;
     damage?: {
         critical?: boolean;
