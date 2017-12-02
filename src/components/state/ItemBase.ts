@@ -23,6 +23,15 @@ export class ItemBase<ItemContent extends ItemContentBase> {
 
                 return true;
             },
+            has(target, name) {
+                return name in (target._item as any);
+            },
+            ownKeys(target) {
+                return Object.keys(target._item);
+            },
+            getOwnPropertyDescriptor(target, name) {
+                return Object.getOwnPropertyDescriptor(target._item, name);
+            },
         });
     }
 }
