@@ -70,9 +70,10 @@ html, body {
 }
 .ItemList > .title > h1 {
     font-weight: bold;
-    font-size: 150%;
+    font-size: 140%;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .ItemList > ul {
