@@ -38,7 +38,7 @@ export class App extends React.Component<{}, AppState> {
     private menu() {
         return Menu.buildFromTemplate([
             {label: "ファイル", submenu: [
-                {label: "プロジェクトを開く…", click: this.setProject},
+                {label: "プロジェクトを開く…", accelerator: "Ctrl+O", click: this.setProject},
             ]},
             {label: "ツール", submenu: [
                 {label: "開発者ツール", accelerator: "Ctrl+D", click() { win.webContents.openDevTools(); }},
