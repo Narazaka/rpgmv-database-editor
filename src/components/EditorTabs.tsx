@@ -8,6 +8,7 @@ export const EditorTabs = observer((props: {tabs: Tab[]; tabIndex: number; onCli
             {
                 props.tabs.map((tab, index) =>
                     <li
+                        key={index}
                         className={props.tabIndex === index ? "selected" : ""}
                         onClick={() => props.onClick(index)}
                     >{tab.name}</li>,
