@@ -2,10 +2,12 @@ import { observable } from "mobx";
 
 export interface ItemContentBase {
     id: number;
+    name?: string;
 }
 
 export class ItemBase<ItemContent extends ItemContentBase> {
     id: number;
+    name?: string;
 
     @observable private _item: ItemContent;
 

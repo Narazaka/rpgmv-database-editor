@@ -6,6 +6,8 @@ let mainWindow: BrowserWindow | undefined;
 
 app.on("ready", () => {
     mainWindow = new BrowserWindow();
+    mainWindow.setTitle("データベース");
+    mainWindow.setMenu(null);
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, "index.html"),
         protocol: "file:",

@@ -3,7 +3,7 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: "Meiryo UI";
+    font-family: "Meiryo";
 }
 
 .App {
@@ -15,57 +15,91 @@ html, body {
     text-align: center;
 }
 
-.SkillEditor {
-    height: 100%;
+.Editor {
+    height: calc(100% - 1em);
+    display: flex;
+    padding: 0.5em;
     background: #E1EDFC;
 }
 
-.SkillList {
-    height: calc(100% - 1em);
+.EditorTabs {
+    height: 100%;
+    width: 8em;
+}
+
+.EditorTabs > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.EditorTabs > ul > li {
+    margin: 0;
+    padding: 0;
+    background: #BAC4CF;
+    border: solid #7A8088;
+    border-width: 1px 0 1px 1px;
+    line-height: 1.8em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.EditorTabs > ul > li.selected {
+    background: #E1EDFC;
+}
+
+.EditorMain {
+    height: calc(100% - 1em - 2px);
+    border: 1px solid #7A8088;
+    padding: 0.5em;
+}
+
+.ItemList {
+    height: 100%;
     width: 14em;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-    padding: 0.5em;
 }
 
-.SkillList > .title {
+.ItemList > .title {
     height: 2em;
     margin: 0;
     color: #fff;
     background: #0155AA;
 }
-.SkillList > .title > h1 {
+.ItemList > .title > h1 {
     font-weight: bold;
     font-size: 150%;
     margin: 0;
     padding: 0;
 }
 
-.SkillList > ul {
+.ItemList > ul {
     height: calc(100% - 2.5em - 2px);
     margin: 0;
     padding: 0;
     overflow: auto;
     border: 1px solid #7A8088;
+    list-style: none;
 }
 
-.SkillListItem {
+.ItemListItem {
     height: 1.2em;
     margin: 0;
     padding: 0.1em 0.5em;
     font-size: 90%;
 }
 
-.SkillListItem:nth-child(odd) {
+.ItemListItem:nth-child(odd) {
     background: #fff;
 }
 
-.SkillListItem:nth-child(even) {
+.ItemListItem:nth-child(even) {
     background: #E4ECF2;
 }
 
-.SkillListItem.selected {
+.ItemListItem.selected {
     color: #fff;
     background: #0274E6;
 }

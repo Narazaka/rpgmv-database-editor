@@ -1,30 +1,30 @@
 import { observer } from "mobx-react";
 import * as React from "react";
 import { ConnectDragSource, ConnectDropTarget, DragSource, DropTarget } from "react-dnd";
-import { Skill } from "./state/Skill";
-import { Skills } from "./state/Skills";
+import { CollectionBase } from "./state/CollectionBase";
+import { ItemBase } from "./state/ItemBase";
 
 const dropTargetDecorator = DropTarget(
-    "skill",
+    "item",
     {
-        drop(hoverProps: SkillListItemProps, monitor: any) {
-            const dragProps: any = monitor.getItem();
-            hoverProps.skills.exchange(hoverProps.skill.id, dragProps.skill.id);
+        drop(hoverProps: ItemListItemProps, monitor: any) {
+            const dragProps: ItemListItemProps = monitor.getItem();
+            hoverProps.items.exchange(hoverProps.item.id, dragProps.item.id);
         },
     },
     (connect) => ({connectDropTarget: connect.dropTarget()}),
 );
 const dragSourceDecorator = DragSource(
-    "skill",
+    "item",
     {
-        beginDrag(props: SkillListItemProps) { return props; },
+        beginDrag(props: ItemListItemProps) { return props; },
     },
     (connect) => ({connectDragSource: connect.dragSource()}),
 );
 
-export interface SkillListItemProps {
-    skills: Skills;
-    skill: Skill;
+export interface ItemListItemProps {
+    items: CollectionBase<any>;
+    item: ItemBase<any>;
     onClick?(): void;
     selected?: boolean;
 }
@@ -36,10 +36,10 @@ interface DnDConnectedProps {
 
 const zeropad = (id: number) => `0000${id}`.slice(-4);
 
-export const SkillListItem = dropTargetDecorator(dragSourceDecorator(observer((props: SkillListItemProps) =>
+export const ItemListItem = dropTargetDecorator(dragSourceDecorator(observer((props: ItemListItemProps) =>
     (props as any as DnDConnectedProps).connectDragSource((props as any as DnDConnectedProps).connectDropTarget(
-        <li className={`SkillListItem ${props.selected ? "selected" : ""}`} onClick={props.onClick}>
-            {zeropad(props.skill.id)} {props.skill.name}
+        <li className={`ItemListItem ${props.selected ? "selected" : ""}`} onClick={props.onClick}>
+            {zeropad(props.item.id)} {props.item.name}
         </li>,
     )),
 )));

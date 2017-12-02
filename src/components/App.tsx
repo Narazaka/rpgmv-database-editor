@@ -1,6 +1,6 @@
 import { remote } from "electron";
 import * as React from "react";
-import { SkillEditor } from "./SkillEditor";
+import { Editor } from "./Editor";
 import { Project } from "./state/Project";
 const dialog = remote.dialog;
 const Menu = remote.Menu;
@@ -26,7 +26,7 @@ export class App extends React.Component<{}, AppState> {
             <div className="App">
                 {
                     this.state.project ?
-                    <SkillEditor project={this.state.project} /> :
+                    <Editor project={this.state.project} /> :
                     <div className="ProjectControl">
                         <button onClick={this.setProject}>プロジェクトを開く…</button>
                     </div>
