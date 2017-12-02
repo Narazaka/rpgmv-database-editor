@@ -25,6 +25,8 @@ const dragSourceDecorator = DragSource(
 export interface SkillListItemProps {
     skills: Skills;
     skill: Skill;
+    onClick?(): void;
+    selected?: boolean;
 }
 
 interface DnDConnectedProps {
@@ -36,7 +38,7 @@ const zeropad = (id: number) => `0000${id}`.slice(-4);
 
 export const SkillListItem = dropTargetDecorator(dragSourceDecorator(observer((props: SkillListItemProps) =>
     (props as any as DnDConnectedProps).connectDragSource((props as any as DnDConnectedProps).connectDropTarget(
-        <li className="SkillListItem">
+        <li className={`SkillListItem ${props.selected ? "selected" : ""}`} onClick={props.onClick}>
             {zeropad(props.skill.id)} {props.skill.name}
         </li>,
     )),

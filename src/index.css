@@ -57,3 +57,8 @@ html, body {
 .SkillListItem:nth-child(even) {
     background: #E4ECF2;
 }
+
+.SkillListItem.selected {
+    color: #fff;
+    background: #0274E6;
+}
