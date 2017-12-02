@@ -34,6 +34,7 @@ interface DnDConnectedProps {
     connectDragSource: ConnectDragSource;
 }
 
+// tslint:disable-next-line no-magic-numbers
 const zeropad = (id: number) => `0000${id}`.slice(-4);
 
 export const ItemListItem = dropTargetDecorator(dragSourceDecorator(observer((props: ItemListItemProps) =>

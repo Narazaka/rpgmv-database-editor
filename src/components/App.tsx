@@ -65,6 +65,7 @@ export class App extends React.Component<{}, AppState> {
                 "openFile",
             ],
         });
+        // tslint:disable-next-line strict-type-predicates
         if (projectFiles && projectFiles[0] !== undefined) {
             const projectPath = projectFiles[0];
             const project = new Project(projectPath);

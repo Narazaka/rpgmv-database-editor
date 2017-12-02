@@ -30,6 +30,7 @@
             true,
             "allow-null-check"
         ],
-        "no-implicit-dependencies": false
+        "no-implicit-dependencies": false,
+        "no-unbound-method": false
     }
 }
