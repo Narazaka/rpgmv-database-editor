@@ -52,6 +52,9 @@ html, body {
     height: calc(100% - 1em - 2px);
     border: 1px solid #7A8088;
     padding: 0.5em;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
 }
 
 .ItemList {
