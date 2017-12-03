@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "tsc && cp src/index.html src/index.css dist",
+    "dist": "tsc && cp src/index.html src/*.css dist",
     "lint": "tslint -p .",
     "dev": "electron dist"
   },

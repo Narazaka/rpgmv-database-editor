@@ -1,0 +1,11 @@
+.rjsf .form-group {
+
+}
+
+.rjsf .control-label {
+    font-size: 80%;
+}
+
+.rjsf .control-label:after {
+    content: ":";
+}
