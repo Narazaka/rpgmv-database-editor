@@ -1,5 +1,22 @@
-.rjsf .form-group {
+.rjsf {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
 
+.rjsf > p {
+    display: none;
+}
+
+.rjsf input[type="text"],
+.rjsf input[type="number"],
+.rjsf input[type="range"],
+.rjsf select {
+    width: 90%;
+}
+
+.rjsf .form-group {
+    width: 100%;
 }
 
 .rjsf .control-label {
@@ -8,4 +25,17 @@
 
 .rjsf .control-label:after {
     content: ":";
+}
+
+.rjsf .row {
+    display: flex;
+    flex-direction: row;
+}
+
+.rjsf .col-md-6 {
+    width: 50%;
+}
+
+.rjsf .col-md-3 {
+    width: 25%;
 }

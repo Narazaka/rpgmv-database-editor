@@ -58,6 +58,13 @@ export const schema = (project: Project) => ({
 });
 
 export const uiSchema = {
+    "ui:field": "layout",
+    "ui:layout": [
+        {name: {md: 6}, iconIndex: {md: 6}},
+        {animationId: {md: 6}},
+        {effects: {md: 6}},
+        {damage: {md: 6}},
+    ],
     "ui:order": ["name", "iconIndex", "description", "*"],
     "id": {"ui:widget": "hidden"},
     "description": {"ui:widget": "textarea"},
