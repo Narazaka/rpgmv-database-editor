@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Project } from "../state/Project";
 
 export interface JsonSchemaPropertyBase {
@@ -133,13 +134,15 @@ export const uiSchema = {
     "ui:order": ["name", "iconIndex", "description", "*"],
 
     "id": {"ui:widget": "hidden"},
-    "note": {"ui:widget": "textarea"},
     "damage": {
         critical: { "ui:widget": "select" },
         variance: { "ui:widget": "updown" },
     },
     "description": {"ui:widget": "textarea"},
+    "message1": {"ui:options": {label: false}},
+    "message2": {"ui:options": {label: false}},
     "mpCost": { "ui:widget": "updown" },
+    "note": {"ui:widget": "textarea", "ui:options": {label: false}},
     "repeats": { "ui:widget": "updown" },
     "speed": { "ui:widget": "updown" },
     "successRate": { "ui:widget": "updown" },
@@ -177,6 +180,15 @@ export const uiSchema = {
                 {"ui:row": [
                     {"ui:col": {md: 6, children: ["hitType"]}},
                     {"ui:col": {md: 6, children: ["animationId"]}},
+                ]},
+            ]}},
+            {"ui:group": "メッセージ", "ui:col": {md: 12, children: [
+                {"ui:row": [
+                    {"ui:col": {md: 3, children: [{render: () => <p>（使用者の名前）</p>}]}},
+                    {"ui:col": {md: 9, children: ["message1"]}},
+                ]},
+                {"ui:row": [
+                    {"ui:col": {md: 12, children: ["message2"]}},
                 ]},
             ]}},
         ]}},

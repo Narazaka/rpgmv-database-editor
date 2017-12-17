@@ -40,6 +40,13 @@
     width: 25%;
 }
 
+.rjsf p {
+    margin: 0;
+    padding: 0.25em;
+    font-size: 80%;
+    color: #5D6671;
+}
+
 .rjsf-layout-grid-group {
     position: relative;
     margin: 0.25em;
