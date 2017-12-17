@@ -5,7 +5,7 @@ import { ItemAnyBase } from "./ItemAnyBase";
 
 export class System extends ItemAnyBase<IDataSystem> implements IDataSystem {
     airship?: IVehicle;
-    armorTypes?: string[];
+    armorTypes: string[];
     attackMotions?: Array<{
         type?: number;
         weaponImageId?: number;
@@ -19,8 +19,8 @@ export class System extends ItemAnyBase<IDataSystem> implements IDataSystem {
     currencyUnit?: string;
     defeatMe?: IDataSound;
     editMapId?: number;
-    elements?: string[];
-    equipTypes?: string[];
+    elements: string[];
+    equipTypes: string[];
     gameTitle?: string;
     gameoverMe?: IDataSound;
     locale?: string;
@@ -36,7 +36,7 @@ export class System extends ItemAnyBase<IDataSystem> implements IDataSystem {
     optTransparent?: boolean;
     partyMembers?: number[];
     ship?: IVehicle;
-    skillTypes?: string[];
+    skillTypes: string[];
     sounds?: IDataSound[];
     startMapId?: number;
     startX?: number;
@@ -112,7 +112,7 @@ export class System extends ItemAnyBase<IDataSystem> implements IDataSystem {
     variables?: string[];
     versionId?: number;
     victoryMe?: IDataSound;
-    weaponTypes?: string;
+    weaponTypes: string[];
     windowTone?: number[];
     meta?: any;
 }

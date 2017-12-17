@@ -3,7 +3,7 @@ import { IVehicle } from "./IVehicle";
 
 export interface IDataSystem {
     airship?: IVehicle;
-    armorTypes?: string[];
+    armorTypes: string[];
     attackMotions?: Array<{
         type?: number;
         weaponImageId?: number;
@@ -17,8 +17,8 @@ export interface IDataSystem {
     currencyUnit?: string;
     defeatMe?: IDataSound;
     editMapId?: number;
-    elements?: string[];
-    equipTypes?: string[];
+    elements: string[];
+    equipTypes: string[];
     gameTitle?: string;
     gameoverMe?: IDataSound;
     locale?: string;
@@ -34,7 +34,7 @@ export interface IDataSystem {
     optTransparent?: boolean;
     partyMembers?: number[];
     ship?: IVehicle;
-    skillTypes?: string[];
+    skillTypes: string[];
     sounds?: IDataSound[];
     startMapId?: number;
     startX?: number;
@@ -110,7 +110,7 @@ export interface IDataSystem {
     variables?: string[];
     versionId?: number;
     victoryMe?: IDataSound;
-    weaponTypes?: string;
+    weaponTypes: string[];
     windowTone?: number[];
     meta?: any;
 }
