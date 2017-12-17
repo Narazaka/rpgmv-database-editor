@@ -6,12 +6,14 @@ import { Animation } from "./Animation";
 import { Animations } from "./Animations";
 import { Skill } from "./Skill";
 import { Skills } from "./Skills";
+import { System } from "./System";
 
 export class Project {
     readonly path: string;
     readonly gameTitle: string;
     @observable readonly skills: Skills;
     @observable readonly animations: Animations;
+    @observable readonly system: System;
 
     constructor(projectPath: string) {
         this.path = projectPath;
@@ -21,6 +23,9 @@ export class Project {
         );
         this.animations = new Animations(
             this.readJson("data/Animations.json").slice(1).map((item: any) => new Animation(item)),
+        );
+        this.system = new System(
+            this.readJson("data/System.json"),
         );
     }
 
