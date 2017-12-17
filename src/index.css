@@ -116,20 +116,3 @@ html, body {
     padding: 0.25em;
     display: flex;
 }
-
-.ItemPropertyBox {
-    margin: 0.25em;
-    border: 1px solid #fff;
-    border-radius: 6px;
-    background: #B7CADF;
-    padding: 0.25em;
-}
-
-.ItemPropertyBox > .title {
-    font-size: 90%;
-}
-
-.ItemPropertyBox > .properties {
-    padding: 0.25em;
-    font-size: 90%;
-}

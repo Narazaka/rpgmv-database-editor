@@ -58,7 +58,7 @@ export const schema = (project: Project) => ({
 });
 
 export const uiSchema = {
-    "ui:field": "layout",
+    "ui:field": "layout_grid",
     "ui:layout": [
         {name: {md: 6}, iconIndex: {md: 6}},
         {animationId: {md: 6}},
@@ -68,9 +68,40 @@ export const uiSchema = {
     "ui:order": ["name", "iconIndex", "description", "*"],
     "id": {"ui:widget": "hidden"},
     "description": {"ui:widget": "textarea"},
+    "note": {"ui:widget": "textarea"},
     "damage": {
         critical: {
             "ui:widget": "select",
         },
     },
+
+    "ui:layout_grid": {"ui:row": [
+        {"ui:col": {md: 6, children: [
+            {"ui:group": "基本設定", "ui:col": {md: 12, children: [
+                {"ui:row": [
+                    {"ui:col": {md: 6, children: ["name"]}},
+                    {"ui:col": {md: 6, children: ["iconIndex"]}},
+                ]},
+                {"ui:row": [
+                    {"ui:col": {md: 12, children: ["description"]}},
+                ]},
+                {"ui:row": [
+                    {"ui:col": {md: 6, children: ["stypeId"]}},
+                    {"ui:col": {md: 3, children: ["mpCost"]}},
+                    {"ui:col": {md: 3, children: ["tpCost"]}},
+                ]},
+                {"ui:row": [
+                    {"ui:col": {md: 6, children: ["scope"]}},
+                    {"ui:col": {md: 6, children: ["occasion"]}},
+                ]},
+            ]}},
+        ]}},
+        {"ui:col": {md: 6, children: [
+            {"ui:group": "メモ", "ui:col": {md: 12, children: [
+                {"ui:row": [
+                    {"ui:col": {md: 12, children: ["note"]}},
+                ]},
+            ]}},
+        ]}},
+    ]},
 };

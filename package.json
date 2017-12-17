@@ -4,8 +4,6 @@
   "description": "RPGツクールMVスキルエディタ",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run fix-deps",
-    "fix-deps": "rm -rf node_modules/react-jsonschema-form-layout/node_modules",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "tsc && cp src/index.html src/*.css dist",
     "lint": "tslint -p .",
@@ -33,6 +31,6 @@
     "react-dnd-html5-backend": "^2.5.4",
     "react-dom": "^16.2.0",
     "react-jsonschema-form": "^1.0.0",
-    "react-jsonschema-form-layout": "^1.0.4"
+    "react-jsonschema-form-layout-grid": "^2.1.0"
   }
 }
