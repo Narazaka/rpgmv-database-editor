@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Project } from "../state/Project";
 
+// tslint:disable no-magic-numbers
+
 export interface JsonSchemaPropertyBase {
     optional?: boolean;
     default?: any;
