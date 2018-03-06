@@ -7,7 +7,9 @@ import { ItemBase } from "./state/ItemBase";
 const LayoutGrid = require("react-jsonschema-form-layout-grid");
 
 const genOnChange = (item: ItemBase<any>) => ({formData}: {formData: any}) =>
-    Object.keys(formData).forEach((name) => (item as any)[name] = formData[name]);
+    Object
+        .keys(formData)
+        .forEach((name) => (item as any)[name] = formData[name]);
 
 export interface ItemContentProps {
     schema: {};

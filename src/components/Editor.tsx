@@ -21,5 +21,5 @@ export class Editor extends React.Component<{project: Project}, {tabIndex: numbe
         </div>;
     }
 
-    private onTabClick = (tabIndex: number) => this.setState({tabIndex});
+    private readonly onTabClick = (tabIndex: number) => this.setState({tabIndex});
 }

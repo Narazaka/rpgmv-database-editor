@@ -46,7 +46,7 @@ export class App extends React.Component<{}, AppState> {
         ]);
     }
 
-    private setProject = () => {
+    private readonly setProject = () => {
         if (this.state.project) {
             const result = dialog.showMessageBox(win, {
                 type: "warning",

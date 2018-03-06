@@ -1,7 +1,7 @@
 import { observable } from "mobx";
 
 export class ItemAnyBase<ItemContent> {
-    @observable private _item: ItemContent;
+    @observable private readonly _item: ItemContent;
 
     constructor(item: {[name in keyof ItemContent]: ItemContent[name]}) {
         this._item = item;

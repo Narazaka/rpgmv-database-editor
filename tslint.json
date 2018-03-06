@@ -31,6 +31,7 @@
             "allow-null-check"
         ],
         "no-implicit-dependencies": false,
-        "no-unbound-method": false
+        "no-unbound-method": false,
+        "newline-per-chained-call": false
     }
 }

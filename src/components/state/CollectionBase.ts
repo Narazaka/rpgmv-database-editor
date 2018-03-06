@@ -2,7 +2,7 @@ import { action, observable } from "mobx";
 import { ItemBase } from "./ItemBase";
 
 export class CollectionBase<Item extends ItemBase<any>> {
-    @observable private items: Item[];
+    @observable private readonly items: Item[];
 
     constructor(items: Item[]) {
         this.items = items;

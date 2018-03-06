@@ -28,5 +28,5 @@ export class SkillEditor extends React.Component<{project: Project}, {selectedId
         </div>;
     }
 
-    private onItemSelect = (selectedId: number) => this.setState({selectedId});
+    private readonly onItemSelect = (selectedId: number) => this.setState({selectedId});
 }
