@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Project } from "../state/Project";
+import { effectDataToDisplay } from "./effect";
 
 // tslint:disable no-magic-numbers
 
@@ -192,6 +193,29 @@ export const uiSchema = {
         "variance": { "ui:widget": "updown" },
     },
     "description": {"ui:widget": "textarea"},
+    "effects": {
+        "ui:field": "table",
+        "table": {
+            tableCols: [
+                {
+                    dataField: "code",
+                    displayName: "タイプ",
+                    dataFormat: (_: number, row: {[name: string]: number}) =>
+                        effectDataToDisplay(row as any).type,
+                    editable: false,
+                },
+                {
+                    dataField: "dataId",
+                    displayName: "内容",
+                    dataFormat: (_: number, row: {[name: string]: number}) =>
+                        effectDataToDisplay(row as any).content,
+                    editable: false,
+                },
+                {dataField: "value1", dataFormat: () => "", editable: false},
+                {dataField: "value2", dataFormat: () => "", editable: false},
+            ],
+        },
+    },
     "message1": {"ui:options": {label: false}},
     "message2": {"ui:options": {label: false}},
     "mpCost": { "ui:widget": "updown" },
