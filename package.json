@@ -14,8 +14,9 @@
     "watch:static": "npm run dist:static && chokidar src/index.html \"src/*.css\" -c \"npm run dist:static\"",
     "view": "electron dist",
     "watch:view": "cross-env ELECTRON_RELOAD=1 electron dist",
-    "prepare:package": "path-exists dist/node_modules || lnk node_modules dist",
+    "prepare:package": "npm run dist && npm run link:node_modules",
     "package": "npm run prepare:package && electron-packager dist --overwrite --out package --platform win32,linux --arch x64 --asar",
+    "link:node_modules": "path-exists dist/node_modules || lnk node_modules dist",
     "lint": "tslint -p ."
   },
   "author": "narazaka",
