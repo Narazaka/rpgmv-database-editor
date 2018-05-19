@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepare": "npm run dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo no test",
     "dist": "npm run dist:ts && npm run dist:static",
     "watch": "parallelshell \"npm run watch:ts\" \"npm run watch:static\" \"npm run watch:view\"",
     "dist:ts": "tsc",
