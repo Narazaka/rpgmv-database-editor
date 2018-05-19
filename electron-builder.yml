@@ -1,5 +1,5 @@
 win:
   target: portable
-  artifactName: ${productName}-${arch}.${ext}
+  artifactName: ${productName}.${ext}
 directories:
   output: build
