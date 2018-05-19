@@ -10,7 +10,7 @@
     "watch": "parallelshell \"npm run watch:ts\" \"npm run watch:static\" \"npm run watch:view\"",
     "dist:ts": "tsc",
     "watch:ts": "tsc -w",
-    "dist:static": "shx mkdir -p dist && shx cp src/index.html \"src/*.css\" dist",
+    "dist:static": "shx mkdir -p dist && shx cp package.json src/index.html \"src/*.css\" dist",
     "watch:static": "npm run dist:static && chokidar src/index.html \"src/*.css\" -c \"npm run dist:static\"",
     "view": "electron dist",
     "watch:view": "cross-env ELECTRON_RELOAD=1 electron dist",
