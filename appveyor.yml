@@ -1,0 +1,30 @@
+version: "{build}"
+branches:
+  except:
+    - gh-pages
+platform:
+  - Any CPU
+configuration:
+  - Release
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - node --version
+  - npm --version
+  - npm install
+build_script:
+  - npm run build
+test: off
+artifacts:
+  - path: build/rpgmv-skill-editor.exe
+    name: rpgmv-skill-editor
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: sf2zcb1xd8VNZCqJF/VYLFGjDphmkBFXrjoFoviFndPkIJ6zj/LPPzG1c63yowsC
+  draft: false
+  prerelease: false
+  artifact: build/rpgmv-skill-editor.exe
+  on:
+    appveyor_repo_tag: true
+environment:
+  nodejs_version: "8"
