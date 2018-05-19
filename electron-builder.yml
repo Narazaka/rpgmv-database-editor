@@ -1,0 +1,5 @@
+win:
+  target: portable
+  artifactName: ${productName}-${arch}.${ext}
+directories:
+  output: build
