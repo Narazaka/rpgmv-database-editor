@@ -10,4 +10,4 @@ HP, MP, TP以外のゲージとか、その他のステータスとか、特殊�
 
 ## License
 
-[MITライセンス](https://narazaka.net/license/MIT?2017)でリリースされています。
+[Zlibライセンス](https://narazaka.net/license/Zlib?2018)でリリースされています。

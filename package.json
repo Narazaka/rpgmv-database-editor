@@ -17,7 +17,7 @@
     "lint": "tslint -p ."
   },
   "author": "narazaka",
-  "license": "MIT",
+  "license": "Zlib",
   "devDependencies": {
     "chokidar-cli": "^1.2.0",
     "cross-env": "^5.1.5",
