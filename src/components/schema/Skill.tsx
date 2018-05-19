@@ -1,76 +1,11 @@
 import * as React from "react";
+import * as JsonSchema from "../../util/JsonSchema";
 import { Project } from "../state/Project";
 import { effectDataToDisplay } from "./effect";
 
 // tslint:disable no-magic-numbers
 
-export interface JsonSchemaPropertyBase {
-    title?: string;
-    optional?: boolean;
-    default?: any;
-}
-
-export interface JsonSchemaEnumablePropertyBase<T> {
-    enum?: T[];
-    enumNames?: string[];
-}
-
-export type JsonSchemaProperty =
-    JsonSchemaStringProperty |
-    JsonSchemaNumberProperty |
-    JsonSchemaBooleanProperty |
-    JsonSchemaArrayProperty |
-    JsonSchemaObjectProperty;
-
-export interface JsonSchemaStringProperty extends JsonSchemaPropertyBase, JsonSchemaEnumablePropertyBase<string> {
-    type: "string";
-}
-
-export interface JsonSchemaNumberProperty extends JsonSchemaPropertyBase, JsonSchemaEnumablePropertyBase<number> {
-    type: "number";
-}
-
-export interface JsonSchemaBooleanProperty extends JsonSchemaPropertyBase, JsonSchemaEnumablePropertyBase<boolean> {
-    type: "boolean";
-}
-
-export interface JsonSchemaArrayProperty extends JsonSchemaPropertyBase {
-    type: "array";
-    items: JsonSchemaProperty;
-    enum?: never;
-}
-
-export interface JsonSchemaObjectProperty extends JsonSchemaPropertyBase {
-    type: "object";
-    properties: {[name: string]: JsonSchemaProperty};
-    required?: string[];
-    enum?: never;
-}
-
-const withOptional = (srcSchema: JsonSchemaProperty) => {
-    if (srcSchema.type === "object") {
-        const newSchema: JsonSchemaObjectProperty & {required: string[]} = {...srcSchema, properties: {}, required: []};
-        for (const name of Object.keys(srcSchema.properties)) {
-            newSchema.properties[name] = withOptional(srcSchema.properties[name]);
-            const prop = newSchema.properties[name];
-            if (!prop.optional) {
-                newSchema.required.push(name);
-                if (prop.enum) prop.default = prop.enum[0];
-            }
-        }
-
-        return newSchema;
-    } else if (srcSchema.type === "array") {
-        const newSchema: JsonSchemaArrayProperty = {...srcSchema};
-        newSchema.items = withOptional(srcSchema.items);
-
-        return newSchema;
-    } else {
-        return {...srcSchema};
-    }
-};
-
-export const schema = (project: Project) => withOptional({
+export const schema = (project: Project) => JsonSchema.withOptional({
     type: "object",
     properties: {
         id: { type: "number", title: "ID" },
