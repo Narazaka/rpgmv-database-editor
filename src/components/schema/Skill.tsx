@@ -5,8 +5,14 @@ import { effectDataToDisplay } from "./effect";
 // tslint:disable no-magic-numbers
 
 export interface JsonSchemaPropertyBase {
+    title?: string;
     optional?: boolean;
     default?: any;
+}
+
+export interface JsonSchemaEnumablePropertyBase<T> {
+    enum?: T[];
+    enumNames?: string[];
 }
 
 export type JsonSchemaProperty =
@@ -16,19 +22,16 @@ export type JsonSchemaProperty =
     JsonSchemaArrayProperty |
     JsonSchemaObjectProperty;
 
-export interface JsonSchemaStringProperty extends JsonSchemaPropertyBase {
+export interface JsonSchemaStringProperty extends JsonSchemaPropertyBase, JsonSchemaEnumablePropertyBase<string> {
     type: "string";
-    enum?: string[];
 }
 
-export interface JsonSchemaNumberProperty extends JsonSchemaPropertyBase {
+export interface JsonSchemaNumberProperty extends JsonSchemaPropertyBase, JsonSchemaEnumablePropertyBase<number> {
     type: "number";
-    enum?: number[];
 }
 
-export interface JsonSchemaBooleanProperty extends JsonSchemaPropertyBase {
+export interface JsonSchemaBooleanProperty extends JsonSchemaPropertyBase, JsonSchemaEnumablePropertyBase<boolean> {
     type: "boolean";
-    enum?: boolean[];
 }
 
 export interface JsonSchemaArrayProperty extends JsonSchemaPropertyBase {
