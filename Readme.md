@@ -8,6 +8,10 @@ HP, MP, TP以外のゲージとか、その他のステータスとか、特殊�
 
 ![スクリーンショット](screenshot.png)
 
+## 最新のビルド
+
+[AppVeyor](https://ci.appveyor.com/project/Narazaka/rpgmv-database-editor/build/artifacts)にあるので、exeをダウンロードして下さい。
+
 ## 開発
 
 ```bash
