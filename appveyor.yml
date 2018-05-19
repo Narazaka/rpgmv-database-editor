@@ -15,15 +15,15 @@ build_script:
   - npm run build
 test: off
 artifacts:
-  - path: build/rpgmv-skill-editor.exe
-    name: rpgmv-skill-editor
+  - path: build/rpgmv-database-editor.exe
+    name: rpgmv-database-editor
 deploy:
   provider: GitHub
   auth_token:
     secure: sf2zcb1xd8VNZCqJF/VYLFGjDphmkBFXrjoFoviFndPkIJ6zj/LPPzG1c63yowsC
   draft: false
   prerelease: false
-  artifact: build/rpgmv-skill-editor.exe
+  artifact: build/rpgmv-database-editor.exe
   on:
     appveyor_repo_tag: true
 environment:

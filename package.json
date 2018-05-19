@@ -1,5 +1,5 @@
 {
-  "name": "rpgmv-skill-editor",
+  "name": "rpgmv-database-editor",
   "version": "1.0.0",
   "description": "RPGツクールMVスキルエディタ",
   "main": "index.js",
@@ -20,8 +20,8 @@
     "link:node_modules": "path-exists dist/node_modules || lnk node_modules dist",
     "build": "npm run build:win32",
     "build:win32": "npm run build:prepare:win32 && npm run build:electron:win32",
-    "build:prepare:win32": "path-exists package/rpgmv-skill-editor-win32-ia32 || npm run package:win32",
-    "build:electron:win32": "electron-builder --win --ia32 --prepackaged=package/rpgmv-skill-editor-win32-ia32",
+    "build:prepare:win32": "path-exists package/rpgmv-database-editor-win32-ia32 || npm run package:win32",
+    "build:electron:win32": "electron-builder --win --ia32 --prepackaged=package/rpgmv-database-editor-win32-ia32",
     "lint": "tslint -p ."
   },
   "author": "narazaka",
