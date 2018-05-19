@@ -1,5 +1,6 @@
 win:
   target: portable
   artifactName: ${productName}.${ext}
+  icon: resource/rpgmv-database-editor.ico
 directories:
   output: build

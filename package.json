@@ -16,7 +16,7 @@
     "watch:view": "cross-env ELECTRON_RELOAD=1 electron dist",
     "prepare:package": "npm run dist && npm run link:node_modules",
     "package": "npm run package:win32",
-    "package:win32": "npm run prepare:package && electron-packager dist --overwrite --out package --platform win32 --arch ia32 --asar",
+    "package:win32": "npm run prepare:package && electron-packager dist --overwrite --out package --platform win32 --arch ia32 --icon resource/rpgmv-database-editor.ico --asar",
     "link:node_modules": "path-exists dist/node_modules || lnk node_modules dist",
     "build": "npm run build:win32",
     "build:win32": "npm run build:prepare:win32 && npm run build:electron:win32",
