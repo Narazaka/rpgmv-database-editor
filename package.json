@@ -5,15 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "tsc && cp src/index.html src/*.css dist",
-    "lint": "tslint -p .",
-    "dev": "electron dist"
+    "dist": "npm run dist:ts && npm run dist:static",
+    "watch": "parallelshell \"npm run watch:ts\" \"npm run watch:static\" \"npm run watch:view\"",
+    "dist:ts": "tsc",
+    "watch:ts": "tsc -w",
+    "dist:static": "shx mkdir -p dist && shx cp src/index.html \"src/*.css\" dist",
+    "watch:static": "npm run dist:static && chokidar src/index.html \"src/*.css\" -c \"npm run dist:static\"",
+    "view": "electron dist",
+    "watch:view": "cross-env ELECTRON_RELOAD=1 electron dist",
+    "lint": "tslint -p ."
   },
   "author": "narazaka",
   "license": "MIT",
   "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "cross-env": "^5.1.5",
     "electron": "^2.0.0",
     "electron-packager": "^12.1.0",
+    "electron-reload": "^1.2.2",
+    "parallelshell": "^3.0.2",
+    "shx": "^0.2.2",
     "tslint": "^5.9.1",
     "typescript": "^2.7.2"
   },
